@@ -25,7 +25,7 @@ function App() {
 
  
   const fetchAnimals = () => {
-    axios.get(`${process.env.REACT_APP_API}/home/animal`).then(response => {
+    axios.get(`api/home/animal`).then(response => {
       // console.log(response.data);
       setfetchAnimal(response.data.animal);
     }).catch((err) => console.log(err));
