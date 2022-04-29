@@ -48,7 +48,7 @@ function Register() {
        
         axios({
             method: "post",
-            url: `${process.env.REACT_APP_API}/user/newadopter`,
+            url: `api/user/newadopter`,
             data: formData
           }).then(response => {
             console.log(response);

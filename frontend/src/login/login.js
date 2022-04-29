@@ -1,11 +1,11 @@
 import React from "react";
 import './login.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Header from "../layouts/headerhome";
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
-import { authenticate, getUser } from './helpers';
+import { authenticate } from './helpers';
 
 function Login() {
 
@@ -21,7 +21,7 @@ function Login() {
 	let navigate = useNavigate();
 	
 	const submitLogin = ()=>{
-        console.log(usersss)
+        // console.log(usersss)
  
       
         let formData = new FormData();
@@ -31,7 +31,7 @@ function Login() {
        
         axios({
             method: "post",
-            url: `${process.env.REACT_APP_API}/login`,
+            url: `api/login`,
             data: formData,
           }).then(response => {
 			  

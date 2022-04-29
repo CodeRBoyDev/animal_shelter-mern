@@ -239,7 +239,7 @@ function Animal() {
         
         axios({
             method: "post",
-            url: `${process.env.REACT_APP_API}/animal/new`,
+            url: `api/animal/new`,
             headers: {
                   authorization: `Bearer ${getToken()}`
               },
@@ -259,7 +259,7 @@ function Animal() {
   //fetch to datatable 
 
   const fetchAnimals = () => {
-      axios.get(`${process.env.REACT_APP_API}/animal`,{
+      axios.get(`api/animal`,{
         headers: {
             authorization: `Bearer ${getToken()}`
         }
@@ -398,7 +398,7 @@ function Animal() {
       // console.log(_id)
       handleUpdateShow()
       axios
-          .get(`${process.env.REACT_APP_API}/animal/${_id}`,{
+          .get(`api/animal/${_id}`,{
             headers: {
                 authorization: `Bearer ${getToken()}`
             }
@@ -531,7 +531,7 @@ function Animal() {
   
       axios({
           method: "put",
-          url: `${process.env.REACT_APP_API}/animal/${_id}`,
+          url: `api/animal/${_id}`,
             headers: {
                 authorization: `Bearer ${getToken()}`
             },
@@ -570,7 +570,7 @@ function Animal() {
     const deleteAnimal = _id => {
         // console.log(_id);
         axios
-            .delete(`${process.env.REACT_APP_API}/animal/${_id}`,{
+            .delete(`api/animal/${_id}`,{
               headers: {
                   authorization: `Bearer ${getToken()}`
               }
@@ -641,7 +641,7 @@ function Animal() {
   const handleUpdateShow = () => setShowUpdate(true);
   const handleShow = () => {
     setShow(true);
-    axios.get(`${process.env.REACT_APP_API}/animal/create`,{
+    axios.get(`api/animal/create`,{
       headers: {
           authorization: `Bearer ${getToken()}`
       }

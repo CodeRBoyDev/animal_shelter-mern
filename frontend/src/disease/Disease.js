@@ -56,7 +56,7 @@ function Disease() {
     }
 
         axios
-            .post(`${process.env.REACT_APP_API}/disease/new`, newCreateDisease,{
+            .post(`api/disease/new`, newCreateDisease,{
               headers: {
                   authorization: `Bearer ${getToken()}`
               }
@@ -79,7 +79,7 @@ function Disease() {
     // console.log(_id)
     handleUpdateShow()
     axios
-        .get(`${process.env.REACT_APP_API}/disease/${_id}`,{
+        .get(`api/disease/${_id}`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -97,7 +97,7 @@ function Disease() {
     // console.log(newUpdateDisease);
 
     axios
-    .put(`${process.env.REACT_APP_API}/disease/${_id}`, newUpdateDisease,{
+    .put(`api/disease/${_id}`, newUpdateDisease,{
       headers: {
           authorization: `Bearer ${getToken()}`
       }
@@ -125,7 +125,7 @@ function Disease() {
   const deleteDisease = _id => {
     // console.log(_id);
     axios
-        .delete(`${process.env.REACT_APP_API}/disease/${_id}`,{
+        .delete(`api/disease/${_id}`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -137,7 +137,7 @@ function Disease() {
   };
 
     const fetchDisease = () => {
-      axios.get(`${process.env.REACT_APP_API}/disease`,{
+      axios.get(`api/disease`,{
         headers: {
             authorization: `Bearer ${getToken()}`
         }

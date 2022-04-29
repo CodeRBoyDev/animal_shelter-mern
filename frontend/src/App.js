@@ -129,7 +129,7 @@ function App() {
   
       axios({
           method: "put",
-          url: `${process.env.REACT_APP_API}/animal/comment/${_id}`,
+          url: `api/animal/comment/${_id}`,
           headers: {
             authorization: `Bearer ${getToken()}`
         },
@@ -142,7 +142,7 @@ function App() {
           document.querySelector("#commentfield").value = "";
 
           axios
-          .get(`${process.env.REACT_APP_API}/home/animal/comment/${_id}`,{
+          .get(`api/home/animal/comment/${_id}`,{
             headers: {
                 authorization: `Bearer ${getToken()}`
             }
@@ -207,7 +207,7 @@ function App() {
       handleShow()
       // console.log(_id);
               axios
-                  .get(`${process.env.REACT_APP_API}/home/animal/comment/${_id}`,{
+                  .get(`api/home/animal/comment/${_id}`,{
                     headers: {
                         authorization: `Bearer ${getToken()}`
                     }
@@ -258,7 +258,7 @@ function App() {
             
                 axios({
                   method: "put",
-                  url: `${process.env.REACT_APP_API}/animal/request/${_id}`,
+                  url: `api/animal/request/${_id}`,
                   headers: {
                         authorization: `Bearer ${getToken()}`
                     },
@@ -483,10 +483,10 @@ function App() {
             <div className="panel-content panel-activity" >
                 {getUser() === false ?
                  <div id="parent">
-                 <Link to="/login" ><h4 class="child" style={{color:'red'}}><b>Sign-in</b></h4></Link>&nbsp;
-                 <h4 class="child">|</h4>&nbsp;
-                 <Link to="/register" ><h4 class="child" style={{color:'green'}}><b>Sign-up</b></h4></Link>&nbsp;
-                 <h4 class="child" style={{color:'black'}}>to leave a comment.</h4>
+                 <Link to="/login" ><h4 className="child" style={{color:'red'}}><b>Sign-in</b></h4></Link>&nbsp;
+                 <h4 className="child">|</h4>&nbsp;
+                 <Link to="/register" ><h4 className="child" style={{color:'green'}}><b>Sign-up</b></h4></Link>&nbsp;
+                 <h4 className="child" style={{color:'black'}}>to leave a comment.</h4>
              </div>
                  :
 

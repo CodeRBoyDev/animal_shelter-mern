@@ -29,7 +29,7 @@ function Injury() {
     //fetch to datatable
 
     const fetchInjury = () => {
-        axios.get(`${process.env.REACT_APP_API}/injury`,{
+        axios.get(`api/injury`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -143,7 +143,7 @@ function Injury() {
         //   console.log(newCreateInjury);
 
         axios
-        .post(`${process.env.REACT_APP_API}/injury/new`, newCreateInjury,{
+        .post(`api/injury/new`, newCreateInjury,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -168,7 +168,7 @@ function Injury() {
         // console.log(_id)
         handleUpdateShow()
         axios
-            .get(`${process.env.REACT_APP_API}/injury/${_id}`,{
+            .get(`api/injury/${_id}`,{
               headers: {
                   authorization: `Bearer ${getToken()}`
               }
@@ -198,7 +198,7 @@ function Injury() {
           }
           // console.log(newUpdateInjury);
 
-          axios.put(`${process.env.REACT_APP_API}/injury/${_id}`, newUpdateInjury,{
+          axios.put(`api/injury/${_id}`, newUpdateInjury,{
             headers: {
                 authorization: `Bearer ${getToken()}`
             }
@@ -231,7 +231,7 @@ function Injury() {
     const deleteInjury = _id => {
         // console.log(_id);
         axios
-            .delete(`${process.env.REACT_APP_API}/injury/${_id}`,{
+            .delete(`api/injury/${_id}`,{
               headers: {
                   authorization: `Bearer ${getToken()}`
               }

@@ -13,7 +13,7 @@ function Adopter() {
     const [fetchAllAnimalRequest, setfetchAllAnimalRequest] = useState([]);
 
     const AllAnimalRequest= () => {
-        axios.get(`${process.env.REACT_APP_API}/animal/all/request`,{
+        axios.get(`/api/animal/all/request`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -89,7 +89,7 @@ const fetchAnimalAdoptionData = () => {
     
     //  console.log(animal.adoption_request.request_status)
     animal.adoption_request.user_id.forEach(user => {
-      console.log(user.name);
+      // console.log(user.name);
         data.rows.push({
           
           id: user._id,
@@ -120,7 +120,7 @@ const fetchAnimalAdoptionData = () => {
     //delete adopt request
 
     const DeleteAdoptRequest = _id => {
-      console.log(_id)
+      // console.log(_id)
       Swal.fire({
         title: 'Are you sure you want to delete adoption request?',
         icon: 'warning',
@@ -135,7 +135,7 @@ const fetchAnimalAdoptionData = () => {
 
           axios({
             method: "put",
-            url: `${process.env.REACT_APP_API}/animal/cancel/${_id}`,
+            url: `/api/animal/cancel/${_id}`,
               headers: {
                   authorization: `Bearer ${getToken()}`
               },
@@ -180,7 +180,7 @@ const fetchAnimalAdoptionData = () => {
         
             axios({
               method: "put",
-              url: `${process.env.REACT_APP_API}/animal/accept/request/${_id}`,
+              url: `/api/animal/accept/request/${_id}`,
                 headers: {
                     authorization: `Bearer ${getToken()}`
                 },

@@ -88,7 +88,7 @@ const contentStyle = {
     
               axios({
                 method: "post",
-                url: `${process.env.REACT_APP_API}/dashboard/rescued`,
+                url: `api/dashboard/rescued`,
                 data: formData
               }).then(response => {
 

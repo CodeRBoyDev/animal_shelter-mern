@@ -16,7 +16,7 @@ function Adopter() {
     const [getUserStatus, setgetUserStatus] = useState({status:""});  
     //fetch employee
     const fetchUserss = () => {
-      axios.get(`${process.env.REACT_APP_API}/useradopter`,{
+      axios.get(`api/useradopter`,{
         headers: {
             authorization: `Bearer ${getToken()}`
         }
@@ -110,7 +110,7 @@ function Adopter() {
       // console.log(_id)
       handleUpdateShow()
       axios
-          .get(`${process.env.REACT_APP_API}/user/${_id}`,{
+          .get(`api/user/${_id}`,{
             headers: {
                 authorization: `Bearer ${getToken()}`
             }
@@ -133,7 +133,7 @@ function Adopter() {
     
         axios({
             method: "put",
-            url: `${process.env.REACT_APP_API}/user/status/${_id}`,
+            url: `api/user/status/${_id}`,
               headers: {
                   authorization: `Bearer ${getToken()}`
               },

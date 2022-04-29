@@ -31,7 +31,7 @@ function Login() {
 
 // console.log(getUser());
     const fetchAdopter = () => {
-        axios.get(`${process.env.REACT_APP_API}/user/${getUser()}`,{
+        axios.get(`/api/user/${getUser()}`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -53,7 +53,7 @@ function Login() {
         // console.log(_id)
         handleUpdateShow()
         axios
-        .get(`${process.env.REACT_APP_API}/user/${_id}`,{
+        .get(`/api/user/${_id}`,{
           headers: {
               authorization: `Bearer ${getToken()}`
           }
@@ -108,7 +108,7 @@ function Login() {
     
         axios({
             method: "put",
-            url: `${process.env.REACT_APP_API}/user/adopter/${_id}`,
+            url: `/api/user/adopter/${_id}`,
               headers: {
                   authorization: `Bearer ${getToken()}`
               },
@@ -136,7 +136,7 @@ function Login() {
       //cancel adoption request
 
       const cancelAdoption = _id => {
-        console.log(_id)
+        // console.log(_id)
         Swal.fire({
           title: 'Are you sure you want to cancel your adoption request?',
           icon: 'warning',
@@ -156,7 +156,7 @@ function Login() {
         
             axios({
               method: "put",
-              url: `${process.env.REACT_APP_API}/animal/cancel/${_id}`,
+              url: `/api/animal/cancel/${_id}`,
                 headers: {
                     authorization: `Bearer ${getToken()}`
                 },

@@ -38,7 +38,7 @@ function Employee() {
 
     //fetch employee
     const fetchUserss = () => {
-      axios.get(`${process.env.REACT_APP_API}/user`,{
+      axios.get(`api/user`,{
         headers: {
             authorization: `Bearer ${getToken()}`
         }
@@ -128,7 +128,7 @@ function Employee() {
         // console.log(_id)
         handleUpdateShow()
         axios
-            .get(`${process.env.REACT_APP_API}/user/${_id}`,{
+            .get(`api/user/${_id}`,{
               headers: {
                   authorization: `Bearer ${getToken()}`
               }
@@ -176,7 +176,7 @@ function Employee() {
     
         axios({
             method: "put",
-            url: `${process.env.REACT_APP_API}/user/${_id}`,
+            url: `api/user/${_id}`,
               headers: {
                   authorization: `Bearer ${getToken()}`
               },
@@ -212,7 +212,7 @@ function Employee() {
     const deleteUser = _id => {
       // console.log(_id);
       axios
-          .delete(`${process.env.REACT_APP_API}/user/${_id}`,{
+          .delete(`api/user/${_id}`,{
             headers: {
                 authorization: `Bearer ${getToken()}`
             }
@@ -267,7 +267,7 @@ function Employee() {
 
     axios({
         method: "post",
-        url: `${process.env.REACT_APP_API}/user/new`,
+        url: `api/user/new`,
           headers: {
               authorization: `Bearer ${getToken()}`
           },
